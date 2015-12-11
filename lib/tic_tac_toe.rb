@@ -24,15 +24,15 @@ class TicTacToe
     position.to_i.between?(1,9) && !position_taken?(position.to_i-1)
   end
 
-  def move(location, token = "X")
-    @board[location.to_i-1] = token
+  def move(location, current_player = "X")
+    @board[location.to_i-1] = current_player
   end
 
   def turn
     puts "Please enter 1-9:"
     input = gets.strip
     if valid_move?(input)
-      move(input)
+      move(input, current_player) # using #current_player method as 2nd argument
     else
       turn
     end
