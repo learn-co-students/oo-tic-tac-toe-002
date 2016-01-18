@@ -28,13 +28,13 @@ class TicTacToe
 
   def turn
     puts "Please enter 1-9:"
+    display_board
     input = gets.strip
     if valid_move?(input)
       move(input, current_player)
     else
       turn
     end
-      display_board
   end
 
   def turn_count
@@ -108,6 +108,7 @@ class TicTacToe
     while !over?
       turn
     end
+    display_board
     if !draw?
       puts "Congratulations #{winner}!"
     else draw?
