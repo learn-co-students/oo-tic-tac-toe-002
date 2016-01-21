@@ -40,7 +40,7 @@ class TicTacToe
     if !valid_move?(input)
       turn
     end
-    move(input)
+    move(input, current_player)
     display_board
   end
 
@@ -79,7 +79,6 @@ class TicTacToe
   end
 
   def play
-    puts "Welcome to Tic Tac Toe"
     while !over?
       turn
     end
